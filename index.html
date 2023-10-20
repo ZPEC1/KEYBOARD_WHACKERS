@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Other meta tags and scripts -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID">
+</head>
+
+<head>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    
+        // Function to change the website language
+        function changeLanguage(language) {
+            if (language === 'en') {
+                googleTranslateElementInit(); // Set it back to the default language (English)
+            } else {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: language, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        }
+    </script>
+    <script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId());
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+    }
+</script>
+
+    <title>Your Website</title>
+    <style>
+         body {
+            background-image: url('https://job4youindia.com/wp-content/uploads/2022/07/Job.png'); 
+            background-size: cover; /* Adjust the background size as needed (e.g., cover, contain) */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+        }
+        /* CSS for navigation bar */
+        
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown {
+            float: right;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+        }
+        .navbar a, .dropdown .dropbtn {
+            display: inline;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        body {
+            font-family: Sa, sans-serif; /* Change the font family to Arial or your preferred font */
+        }
+
+        h3 {
+            font-style: italic; /* Change the font style of all <h3> elements to italic */
+        }
+
+        p {
+            font-weight: bold; /* Change the font weight of all <p> elements to bold */
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="jobseekers.html">Job Seekers</a>
+        <a href="employers.html">Employers</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="qanda.html">Q & A</a>
+        
+        <a href="login.html" style="float: right;" data-lang="en">Login/Sign Up</a>
+    </div>
+            <!-- Language Selection Dropdown -->
+        <div class="dropdown" id="google_translate_element"></div>    
+    </div>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <!-- Home Page Content -->
+    <div>
+        <center><h1>Welcome to PUNJAB JOB ALLOCATION PORTAL!</h1></center>
+        <h2>Whatever you're looking for, we've got it.</h2>
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAQEBAQEBIPEBAQFRAVDxAVFhAPEBUQFRUXFxUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGC0lICUtLy0rLS0tLS0tLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSsrLS0tLS0tLf/AABEIAKEBOAMBIgACEQEDEQH/xAAcAAEAAAcBAAAAAAAAAAAAAAAAAQMEBQYHCAL/xABKEAABAwICBgYHBQUFBgcAAAABAAIDBBEFIQYHEjFBURMiYXGBoTJCUnKRscEUYnOisiMlgrPCJDNDdJI0NVNkk9EIFRZEVIPw/8QAGwEAAgMBAQEAAAAAAAAAAAAAAAQDBQYCAQf/xAA5EQACAQMBBAYJAgYDAQAAAAAAAQIDBBExBRIhsTJBUXGh0RMiQmGBkcHh8BQzFSNSYnLxNFOCJP/aAAwDAQACEQMRAD8A3iiIgAiIgAiIgAiIgCxaW6QR4fTOqHhzz6EbB60hBIBPqizSSeQ4mwWso9cdWPSgpXe70jPm8rKddo/drPx2fypVoxJV6slPCZpNlWNCrb79SOW2/A2tHrmf61G13dLsfNpVZDrjhPp0sjeezI1/zaFp1FH+oqdpYPZFm/Y8X5m749b1D60VUO4RO/rCrsP1nYfM9sY6djnua1ocxvpOIA9Fx4laCVx0d/2um/Gh/U1dK4mL1NjWyi2s6Pr93cdRoiJ8yYRFjukemFFQA9PLeS1xCzrzHl1fV73EBeNpLLOoQlOW7FZZkSgVpjGdb1Q67aWFkLc7Pk/ay25huTWnv2lg2KaQVdUSZ55ZL+qXu2PBg6o8AoJXMVpxLahsWvPjNqPi/Dh4nR1RjtHGbSVVLGeTpYmn4EqU3SbDz/7yj/60I/qXMm0eZS55lRfqn2Dv8Ah/2P5LzOqKXEIZReKWKUHcWPY8eRVWuTGyEG4JBG4jIrIcM03xKmI6Ooe5o9R56VluVnXsO6y6V0utENTYMl+3UT71jlnkdJItX6Na2YpCI61nQvNv2sd3R3+8zNzfPwWyaaoZIxskbmvY8Xa9pDmkcwRvTEJxloynuLWrbvFSOOT7noT0RF2QBFj+LaY4fSuc2apja9ps6Nu1K8HkWsBIPesaqtb+HNdZjKmQe0GxtHhtOB8ly5xWrJ4WtafGMG/gbFRa/i1tYcd7apveyI/J5VZFrOws75Xs745D+kFeKrB+0iR2FytaUvkzNEWLwaf4W/dVs8WTR/qaFWx6V4e7dWUvjIxvzK9U4vRkMqFWPSg13pl7RW+LGaV/o1FM73ZY3fIqtjka4XaQ4cwQQulxI2mtT2iIg8CIiACIiACIiACIiACIiAMC1ztvhoPKaM/kkH1WiFvzXE2+GP7JYvqPqtBBIXPTNdsP/jf+nyRFERLlwFcMA/2qm/Fi/UFb1XYIbVNP+JH+oIWpxU6D7mdTIi1nre0zNJF9jgdaonbeR4OccJyyPBzsx2C54gq2lJRWWYClTdSaiuso9Ymsroy+koHDbF2y1Asdk8WxdvN3DhnmNSOc5xLnOLnuJLnEkkk5kkneVIgb6ynKtqzcnxNnY2kKEPVXm+/84BFBQUY7k9KF1BF7g8yRUV4XpGAyRWVaE6ZzYdIG3dJTPP7SEnL3239E+R48CMUUURk4vKOatKFWDhNZTOpsLxCKpijnhcHRyC7XfMEcCDcEcCFXLROqnSk0tQKWVx6CdwDb7mzGwa/uOTT4Hgt7KypVN+OTFX1o7Wq4dWqfu81ozl7TY/vGu/zFV/NerGN6vGmjv3jXf5qp/mvVnYc294ST1ZqKUvUj3LkipRRUFCWRFLnmVBF4e5I7R5n4qfTVcsTtqOSRjvaD3Md8QpCIB8VhmxNENZlRC9sdYXTwkgF5zmb2h3rDmHZ9vA7opp2yMbJG4PY8BzHDMFpFwQVymtx6lsdMkUtE836Hrxc+jJs5vcCWn+Mpu3rPO6zO7Y2dTjB16axjVLTHbjtz2d/bnaCIidM0EREAEREAEREAEREAYVre/wB1S9j4/wBS0A1dA62x+6qjsMP8wD6rn0JC56ZrNhv/AOd/5PkiKIiXLoKswk2qIffZ+sKjVRQm0sZ5Oj/UEHMuKZ1BilcymhlnlNo4WPe88dlovl2rlXF8TkraqWolPWleXHiANzWjsDQAOwLdGvnGTDQx0zTZ1VJ1hziis535jH5rRuHt3lP15YMpsmjvSz28l9yrsoooFIGrIKCK96IYG6urIqcEhhN5Hje2Nubj38B2kLpJt4RHUqRhFylotSu0S0Iq8R6zA2KEGzpn32bjeGAZuPl2qdpNq1xKjY6VgjqIW5uMW0ZGt4l0bhf/AE3W85nxUNM0MaGsjDWQxjLPc1v1J7yrTFLNKduSR2fqtJYwdgA+uaejbxS4mUq7XrznmPBdnm9cnNDatw32PkqqOQO3Lc2ler+kq43ugayCpzLXt6rHu32kAyzPrb+/ctHujdE9zXAtewlr2neHA2IPiFBUo4LOz2i6n3Ktel5a6+aily6TPYNrHkukNBcb+20MMzjeQDo5Tx6RnE9pFnfxLm5bV1GYkQ+ppici1krBwGydhx8dpn+lTW0sTx2lXtqjv22/1xefg+D+j+BrXS939vrf8zUfzHq0x7x3hXHSw/26s/zE/wCtytsW8d4Q+s9pPhH4FYiioKAtwct+Shtt9pv+pZFoDQRVGIQQTMbJFIZQ9jswRsE/RWTTrAm0FfU0zCSyNwMZO/Ye1r2gniQHAX7FLCnvLJX3N66VX0ajnhnxaJQN9xuis0eRV3iddoK5nDdJra69NlNYZ6WYaqaox4pABukbI13c5jiPNrVh6yjVmy+K0o+88/Bjj9F5T6a7zq8SdvUz/TLkzotERWpgQiIgAiIgAiIgAiIgDD9bA/dFV/8AT/NYueWLonWm2+E1fYIj8JWLnZqRuul8DVbC/Yf+T5RPSIiWLsKZTHrs99nzUteoj1m+81AIy3X7XGTEo4b9WGFgtye9znE/DY+CwqkbZg7VdNa0/SYzXHlI1v8AojYz+lW6IdUe6E1cModjR8Ej2oIvKWReMitu6isNAZVVRAu4shYeIaBtO+N4/gtQldAaoKcMwqF3/FdM894d0f8AQp7dZmVO2ajjbYXW0vr9C56ZXtT+ztuv72ybeW0rd9oa1jnvOzFG0vldya0XPyWQ49EySLonek4gstvaR63dw8VZK1ojDYw1wYc9sg2cew8U+ZM1NiWn1ZNMTC8U0N7MYGRuIbfIvLgSTz4KmxzSaXrNifdh2uka9kUgeb5ucHNIJNzfK2a2tR6G0szg40tOGk3c8xMBPdln3rQVdI9sj2OJOzI5ts7ZEj6Lx1YwTys58CahaTuJerLGNffn88SuwV0RL3TC7Wi7WAbILieNhuGeXcqeW2ZG65AHMXIA8lmmsLCmRNpKuna1kcsYjeGjZbtMF2mzeJafyLCC69uFkrcThu7ijxznPuL3ZVKu5enlVbi1jdbb4rveFj3a9YCzDVRUmPFKccJBI13c5riPzBqw5X7Qh5biVCR/8iEeDntafIpWDxJMubqKlQnH+18iy6TOvW1R5zTfzHKgg9IKqx83qqg85Zf1lUlP6QUz0K6i+MfgVyIiXLkynVnMxmJ075HNYxgnc57iGtaBC83JOQVh1gY1HWYjU1EebHuaIzuuxjGsDrcLht/FUhF96bA5M+AUsKm7HAjcWXpavpFLHq48Wy0xgk5K6xtsAOSiMtyiuZz3iW2tlSy85ZBbF1KYcX1kk9urTsdZ3339Vv5Q9YFQ0ck0jYomOe95sxjRckrojQfR0YfStiNjK87czhuMhFrDsAAHgTxXdvDennsE9sXUaVBw9qXD4db+nxMkREViY8IiIAIiIAIiIAIiIAxfWWL4VW+4zykYucWrpDWML4VW/hjye0rm9u5JXXSNPsJ/ypd/0R6RESpe5Ci3eO8LzdGnMd4Qz1PiiOnhvi2IH/mp/KQheW7h7oXvT5mzi1eP+ZqD4F5P1Utu4eCZuCk2R0ZfAiiIly4PJXSOreMNwqjA9hx8XPc4+ZXN66T1dm+F0f4dvg5wTNt0mUe3P2Y9/wBGDUua49I0ulOb2k7GXAA2PV7lKraiSUt2rNa03a0br7rk8VddIYwaeR3rMG0x3EOuNxVtpDtNaTvsLp0zJNpsRlYA2zXtG69wbcrj/stYVmrLpZpJX1BG2979kNtbacTa5dnvW0nRblzXjeKSzSyl8sj2ue8tDnucA3aNgATuUVVpYyh6xp1ZOXo5Y0zwz3GzNK6aODBxSyStkkikj+zm7ds2uLbI5MLh4BauCkU3rb1PSdWW9LQ0uz7f0NLGc5bfZ+aEVedDj+8KH8em/msVmV70KaTiNCB/x6Y+AkYT5BRrVDdb9qXc+Rj+Mn+0T+/L+oqnpvSCm4mbzSnm5/6ipVN6QU8tGVlLpR+BXoiJYugiiljyKAwyCKNjyKggDJdDdLH4bIXNjila7J4c0B4byZIBdvDLMdi3xo9jsFdAJoSbbnsOT2P4tcOfzXMSzHVZjhpa+NhP7KpLY3jhtONmO7wS3Pk4pihVcXh6FPtPZ0KsHVivXSz3pdXy09+up0GiInzJBERABEUuWVrRdzmtA3kkNHxKAJiKwV+mOHQA9JV09xvDXdK74MuVj1drZw5mTBPMeBa1rW/FzgfJcOpBasYp2dxU6NN/J4+ZsBFbsCxSOrp4qiK+xI29jva4GzmntBBHgriu08kEouLaeqMe0/F8MrfwXn4Zrmhm5dM6d/7srvwJfkuZYTkk7nVGi2E/Vkvf9D2iIlS/Ci3eO8KC9xNu5oG8uaB4oPVqXDWzTmPGavKwcYnjt2omE+d/grVGeqPdCzj/AMQOHllfTzgdWeEN/jicb/lexYJTG7QmbhFFsaXB+9E1EUEsXgXQ2qabawmmHFnStP8A1HOHk4Lnlbo1G4gHU1RTcYpGvHuvaBl3GP8AMp7d4mVG2Yt22V1NPmubRnmkLrU0v8I+LgFbMN3BV+lL7U9vafGPO/0VFh+QCfMoV7m5LmDSKl6GrqY7WEckzQPuh5t5WXUG3kuc9ZLAMVqwPaYfExsJ+ahrLgmWWzZPfku1cmWOnGTlNXiEZL2kHqauksQRFZTqyi28WpByc9x/ga930WKrY2pKh26yabhFE4X++8gDyD13TWZohvp7ltUl/a/Hh9TV1S673nmSfNKb0mrw/ee8qZTekPH5Lt6C0F/MXeVaIigLQzrVFQxT1xZLHFKwQyO2HNbIy4c0A2cLXzV0156O08UFLUwRxxHbdE9sbWxhwLS9pIaLXGyc/vKm1Hj+3zdlPJ+uJQ136SxzvioonB4gLnzOGbelI2QwHm0bV/etvBTdPCpfEzl4pSv8LRJZ7sGpBccVcaOUkWO9qobKso2+kVHU4odsk41OGhVKZTylj2vabOY5rmntBuFJUWjMd4S+C4XFnWML9prXcwD8Qi80zNljBya0fAKKuD51ktWleONoKWSpc3b2dkNZfY2nOcABextvJ3cCtWV2uGsd/cwwRjtD5HfG4Hks+1qUpkwqptmWdE8dzZG7X5S5c7JSvOUZYTNBsm1oVaTlOOXnrz/oyit0/wAUl9KrkYOUezD5sAKsNVXSynakfK93tF73n4lUqJRtvUvoU4Q6EUu5JciJKKCivCQ3/qek2sLjHsPmafE7X9Szhal1JY3G1s1E9wa8vEsLSQNvqhrw3tGw027TyK20rKk8wRib+Dhc1E+1v58TFNaNSIsJrD7TGsHe97W/Ilc3wbltHXXpZFLsUEDg8Mft1D2m7dsAhsdxvtck8jbiDbWEQsAlriWWXexqUowbfXx5HtFBEsXZFXHRyHbrKVntzQt+L2hW1ZPq0pelxSkFrhkhcezYa6QebQuorLRFXlu0pPsT5Gytd+DGow3pmi76R4kPE9E7qvHm13c1aEoHZOC66rKZksb4pAHRyNcx7TuLHCzgfArlrSbA34dWy077kMd1H+3C7Njvhv7QRwTlxHKM3smsoz3X+J6lIoKKgkjUBZNq90h+wVrJHk9C8Fk3H9k63Wt91wae4HmsYK8kr2LaeUQ1oxqQcJaPgdL6UTB7KbZIc179trgQWkBhsQRvFnLzDIAALhaW0O0knbLFTSyvMHWEUbrFrHuts7JOYBzFr26y25QvBAsrGE95ZMbc27oT3H+IuJnHO/mtH6ycLmbiE8xjf0MpjLJbHYNo2Ai/A3BFjyWbf+uGRVc9NUkwuZI5oLs4y2/UN/Vu2xz571k8M0NQwg7EkbxYg2exzT5ELySU1hM7oVJW01KUeD8Vrwemhz0F7WxtM9XmxHJVUn92wF8kJPotGbnMPEAZ7J8OS1uEjODg8M1dtdU68d6H3RFb01P4V0GHPncLOqXOdyPRsu1t/HbPitO6P4TJWVMNPH6UjgCd4a3e557AAT4LpdtMyCm6KMbMcUWywcmtbYfJTW0OO8Vu2rjFNUlq+L7l9+RyW/ee8r1T+koO3le4N6jeg7FfzF3lQigihLAmsnlZfopHxl9w8tc5m0w72m28XAy7FRmlPEqei6UmuCIZUYSeWiU2lHNTgLKCLxtvU6hCMOij0rxohh5qa6lhAu18kW17jTtO/K1ysq21qU0dN5K+QdWxjgvxJttvHcAGg9ruS6px3pJEN7XVGhKfuwu98Pz3ZNvIiKzMQUWL0Inp5oDkJo5IyeW20tv5rliohcxzmPGy5pc1wO8OBsR8V1ouf9buBmmr3StFo6q8gPDpP8Qd+0Q7+NLXMcpMuti1t2pKm/a4rvX25GDooIkzSkUREHpE3ysSCCC1wyII3EFVc+OV72lj6uqewixa6WRzSORBcqNF6pNENShCo8yXElMh4lTUReN5JIxUdAiIvDoLaeo3Cy6aerI6rGCNh4F8hDnW7QGj/WtZ0dK+WRkUYL3vcGsaN5cTYBdK6H4G2gpIqcWLmjalcPWldm493AdgCYt4ZlnsKna9yqdH0fXLktfIviwbWfoaMSpw+ID7XACYeHSN3uiJ7d4vuPIErOUTrSawzLwm4SUo6o5GAc0ljwWvYSHNILXAg2IIO4g8EW/NPdXcVftTwFsNZb0v8OW24SAbjw2hnzvlbSWMYPUUchhqYnRPG6/ouHtMcMnDtCQqUnFmssr6FeOPa7C3leCvRUFGOSPPaMiNxW99V+IvqKRskti8Ocwu5hu4ntWiFufU669E4ezK4fkYfqmaD9bBTbWgvQqXXnzMO1xuacSOyACI4A62V3ZnPwIWN4HiE8MrOhlfHcsDrHq5kC5acj4q6axpdvFKo8nMaP4WNH0WOMNiCOBUdSXrNobtaSdvGL7F4nReNTbGG1TuVPNbv6Mgea51AufFb40jmL8IlLAXOlijDQAS4mRzAAAN56ytWrrV+yBzaqt2TNkYoMiGHg+TgX8hw37901aDnJJFZs24hb0Jzn24S63hffi+rwLtqr0RNFCamdtqmoaLNIs6OE5hp5OORPKwHArOMS/uZfw5P0lTembzVPVkPY5mdnNc087EW+qnjFRWEVdarOtNznqzkpwzPivUO9bDxrVRVx3NM9k7c7NP7OTsGZ2T33CxJ+jdbG8tfTVAcOGxI4HuIFj4JKUJJcUailc0ZyzGS5c+JQIr5T6H4jJ6NNL/ABt2PnZXOk1cYi/eyNnvSMP6brhQk+pjMry3jrUj81y1MQRbCp9VNSfTngZ7m2/5gK50uqZn+JUPd7rGt+ZK6VGfYQS2par2s9yfkaqXprScgCSdwW6KfVhQN39M/wB5zWj8oCv+H6JUcP8AdwMB9rMu8Sc12reXWxae2qSXqRb+S8+Rq3Q7V/PVva+ovBTixcXdWR45MYcx7xyz4rfFFSRwxsiiaGRxtDWNG4NG5UcFKG7gAq6MlM06aguBS3d5UuWnPRaLq/2T0UAUUgmRWPaa6OsxGlfCbCQdeF59WUDK/wB05g9h7FkKLxpNYZ1CcoSUovijk6upJIJHRStcx7CWvYd4I/8A29U66H070HixJu2y0VUwWZJbquA3Mktw7d47dy0XjmBVNHJ0dRE9js9km5Y8Di1wycO5IVKTg/ca6yvoXEcaS615dq5FsREUQ8RRQRAZIooIg9Ir0xhJAAJJIAAzJJ3ABV2GYPPUG0bCW8XG4A73fTetn6GaNxUREpAlqBueR1W39hvP7xz7lJClKegjd39K3WHxl2efZz9xc9WWgoo2iqqWj7S4fs2HPoWEZ3++RkeQNuJWxlYYqyU81VMkeU/GKisIyterOtNzm+L/ADBcyV4dKBxCousV4dFddEOCfLXMHFWPH5qSpiMNREJmHgRYg82u3tPaFXvpAVKdh7DwXh0nh5RpjHdCQ1znUrjscGPI2x2BwFj4gLGKjBqlnpRPHa0Ej45hdFHC4/ZC8/8AlcfsN+AULoRehZUtq1oLEsS79fmvrlnNbonjeHA9oIW3dT4LaWW4IvMbXy9RizgUIG5rR4AKVHC4y2BLQAL28V7To7jzk5u9o/qKe5uY+Ofoab0j0brqivq3x08rmunm2XEFjS3pHAEF1gRa2aqsN1aVT7GZzIm8Wg7bvgMh8Stz/Ys7Xupgw/tsj0Ec5Z5/FKyioxwsY6uPDv8AIs9CxrKWKLasGtY0E7zsgf8AZVdNs8CT4FTX4OR6J3cCplNTyMObCe7NTFdkqI1PaUhhPEW+CniJAHgL1sqYGL0Ag8KcwA8AvP2UKqsooAo/sqiKZVaIAphAvQhU9EASxGvYCiiACIiAClySWUxeSwFAFuqK543BWLF9qoYY5WNljO9jmhzb8DY8VlToRyClmAcl5g9TxoaexDV/C8kxNljPIWez4Oz81aZNW1T6hB7w5v1K3qadQ+zKN0YPqHYbSuYLCn88PmjRbdWFafWiHe5w/pVVBqoqT6c8De7bf9At1ilXoUy8/TwJP4rc/wBS+S8jUtJqmb/i1D39jWAeZJV/w/VxQxWOw+Q83lp8rW8lnwgXoQhdKlBaIgqXtxU6U3y5YLDTYLCwANYABuVbHSAbgArl0QUejCkFclE2FTGxqq2Ao2QeFOI1Ho1PsooAp+iToVUIgCn6FR6FT0QBIMAUs0DL3zB7CqtEASI6ZreZ7zdTdlekQBCyWUUQAREQAREQAREQAREQAREQAREQAREQAREQAUCiIAIiIAiiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgD/2Q==" alt="image">
+        <ul>
+            <li><h3>Quick Access Links:</h3></li>
+            <p>Quickly Access Government Job Services:</p>
+            <p>Find Government Jobs</p>
+            <p>Apply for Positions</p>
+            <p>Career Development Resources</p>
+            <p>Jobseeker Registration</p>
+            <li><h3>How It Works</h3></li>
+            <p>Joining Our Portal is Easy:</p>
+            <p>1. Create Your Jobseeker Account.</p>
+            <p>2. Explore Job Listings and Apply.</p>
+            <p>Start Your Government Career.</p>
+            <li><h3>Government Commitment</h3></li>
+            <p>Our Commitment to You:</p>
+            <p>Diverse Career Opportunities</p>
+            <p>Equal Employment Opportunities</p>
+            <p>Career Development Support</p>
+            <p>Transparent Hiring Process</p>
+            <li><h3>Job Categories</h3></li>
+            <p>Discover Jobs in Various Categories:</p>
+            <p>Skilled</p>
+            <p>Unskiled</p>
+            <li><h3>Career Development Resources</h3></li>
+            <p>Resume Building</p>
+            <p>Interview Preparation</p>
+            <p>Skills Training</p>
+            <p>Networking Opportunities</p>
+            <li><h3>Privacy and Security</h3></li>
+            <p>Your Privacy Matters: Learn about our commitment to data security and privacy.</p>
+        
+
+
+
+
+        </ul>
+        
+        
+    
+
+        
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    
+        // Function to change the website language
+        function changeLanguage(language) {
+            if (language === 'en') {
+                googleTranslateElementInit(); // Set it back to the default language (English)
+            } else {
+                new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: language, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        }
+    </script>
+    <title>Job Offers</title>
+    <style>
+        body {
+           background-image: url('https://job4youindia.com/wp-content/uploads/2022/07/Job.png'); 
+           background-size: cover; /* Adjust the background size as needed (e.g., cover, contain) */
+           background-repeat: no-repeat; /* Prevent background image from repeating */
+       }
+       /* CSS for navigation bar */
+       
+       .navbar {
+           background-color: #333;
+           overflow: hidden;
+       }
+       .navbar a {
+           float: left;
+           display: block;
+           color: white;
+           text-align: center;
+           padding: 14px 16px;
+           text-decoration: none;
+       }
+       .navbar a:hover {
+           background-color: #ddd;
+           color: black;
+       }
+       .dropdown {
+           float: right;
+           overflow: hidden;
+       }
+       .dropdown .dropbtn {
+           font-size: 16px;
+           border: none;
+           outline: none;
+           color: white;
+           padding: 14px 16px;
+           background-color: inherit;
+       }
+       .navbar a, .dropdown .dropbtn {
+           display: inline;
+       }
+       .dropdown-content {
+           display: none;
+           position: absolute;
+           background-color: #f9f9f9;
+           min-width: 160px;
+           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+           z-index: 1;
+       }
+       .dropdown-content a {
+           float: none;
+           color: black;
+           padding: 12px 16px;
+           text-decoration: none;
+           display: block;
+           text-align: left;
+       }
+       .dropdown-content a:hover {
+           background-color: #ddd;
+       }
+       .dropdown:hover .dropdown-content {
+           display: block;
+       }
+       
+   </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .job-offer {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .job-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .wages {
+            font-size: 18px;
+            color: #007acc;
+        }
+
+        .requirements {
+            font-size: 16px;
+        }
+
+        .tenure {
+            font-size: 16px;
+        }
+
+        .skills-required {
+            font-size: 16px;
+            font-style: italic;
+        }
+       
+    </style>
+</head>
+<body>
+     <!-- Navigation Bar -->
+     <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="jobseekers.html">Job Seekers</a>
+        <a href="employers.html">Employers</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="qanda.html">Q & A</a>
+        
+        <a href="login.html" style="float: right;" data-lang="en">Login/Sign Up</a>
+    </div>
+            <!-- Language Selection Dropdown -->
+        <div class="dropdown" id="google_translate_element"></div>    
+    </div>
+
+    <div class="job-offer">
+        <div class="job-title">Job Title: Construction Worker</div>
+        <div class="wages">Wages: Rs.1600 per month</div>
+        <div class="tenure">Tenure: 6 months</div>
+        <div class="skills-required">Skills Required: Unskilled</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSciTnLQLSIMAfYY7O52vXF1jjl59g8_bSGtYisul2WL4MyL-Q/viewform?usp=sf_link" class="apply-now-button">Apply Now</a>
+    </div>
+    
+    <style>
+        .apply-now-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007acc; /* Change to your desired button color */
+            color: #fff; /* Button text color */
+            text-decoration: none;
+            border: 2px solid #007acc; /* Button border color */
+            border-radius: 5px; /* Rounded corners */
+        }
+    
+        .apply-now-button:hover {
+            background-color: #005b99; /* Change to the hover color you prefer */
+            border: 2px solid #005b99; /* Change to the hover border color */
+        }
+    </style>
+    <div class="job-offer">
+        <div class="job-title">Job Title: Mining Worker</div>
+        <div class "wages">Wages: Rs.2000 per month</div>
+        <div class="tenure">Tenure: 3 months</div>
+        <div class="skills-required">Skills Required: Unskilled</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2eq5x3-RnE6-_Qo3NsD1wm9Y3RpFjCJeCmgooqG0_hUOUJw/viewform?usp=sf_link" class="apply-now-button">Apply Now</a>
+    </div>
+    
+    <div class="job-offer">
+        <div class="job-title">Job Title: Truck Driver</div>
+        <div class="wages">Wages: Rs.1000 per month</div>
+        <div class="tenure">Tenure: 1 year</div>
+        <div class="skills-required">Skills Required: Skilled(Valid Driving License)</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScAWeY0JsDBzhzsPeGQUnPPXSXPt_RpOgqLEvcys5V1icN0HQ/viewform?usp=sf_link" class="apply-now-button">Apply Now</a>
+    </div>
+    
+    
+
+    
+
+</body>
+</html>
